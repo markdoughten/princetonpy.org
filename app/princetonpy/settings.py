@@ -9,7 +9,9 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+import sys
 
+import environ
 import os
 from pathlib import Path
 
@@ -218,3 +220,6 @@ TINYMCE_DEFAULT_CONFIG = {
     "document_base_url": "https://www.princetonpy.org/",
     "default_link_target": "_blank"
 }
+
+if 'test' in sys.argv:
+    DATABASES['default'] = {'ENGINE': 'django.db.backends.sqlite3'}

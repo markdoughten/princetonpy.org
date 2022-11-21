@@ -16,7 +16,8 @@ sorl-thumbnail = "^12.7.0"
 django-environ = "^0.8.0"
 yacron = "^0.14.0"
 whitenoise = {extras = ["brotli"], version = "^6.0.0"}
-hypercorn = "^0.13.2"
+Pillow = "^9.3.0"
+hypercorn = "^0.14.3"
 
 [tool.poetry.dev-dependencies]
 pytest-django = "^4.4.0"
