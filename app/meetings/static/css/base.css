@@ -99,6 +99,10 @@ body {
         grid-template-columns: 1fr;
     }
 
+    menu {
+        padding-inline-start: 0
+    }
+
     .nav-links {
         flex-direction: column;
     }
