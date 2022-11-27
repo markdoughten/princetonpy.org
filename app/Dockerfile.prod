@@ -51,6 +51,7 @@ ENV APP_HOME=/home/app/web
 ENV APP_PIP=$APP_HOME/pip
 ENV PYTHONPATH="${PYTHONPATH}:$APP_PIP"
 WORKDIR $APP_HOME
+ENV PATH="${PATH}:$APP_PIP/bin"
 
 COPY --from=builder /usr/src/app/wheels /wheels
 COPY --from=builder /usr/src/app/requirements.txt .
