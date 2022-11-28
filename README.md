@@ -95,3 +95,22 @@ before_date = datetime.now(tz=dateutil.tz.gettz("America/New_York")) - delta
 meeting_qs = Meeting.objects.filter(date__lte=before_date)
 meeting_qs.update(tba=False)
 ```
+
+### Backup DB
+
+```bash
+docker compose exec -t db pg_dumpall -c -U postgres > dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
+```
+
+Use this one:
+```bash
+docker compose exec -t db pg_dump -U postgres princetonpy_prod > dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
+```
+
+#### To restore
+Rename `dump[...].sql`.
+
+May have to manually rename `princetonpy_prod` to `princetonpy`:
+```bash
+cat dump_27-11-2022_16_28_02.sql | psql -U postgres -d princetonpy
+```
