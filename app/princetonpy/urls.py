@@ -21,7 +21,7 @@ from django.views.decorators.cache import cache_page
 from django.views.generic import TemplateView
 from django_ses.views import SESEventWebhookView
 
-from homepage.views import Home
+from homepage.views import Home, JitsiPage
 from meetings.views import meetings_list, meeting_page, next_meeting_page
 
 urlpatterns = [
@@ -30,6 +30,7 @@ urlpatterns = [
     re_path(r"^newsletter/", include("newsletter.urls")),
     path("signup/", TemplateView.as_view(template_name="signup.html")),
     path("", cache_page(120)(Home.as_view())),
+    path("jitsi/", cache_page(120)(JitsiPage.as_view())),
     path("meetings/", meetings_list),
     path("meeting/<int:pk>/", meeting_page),
     path("meeting/", meeting_page),

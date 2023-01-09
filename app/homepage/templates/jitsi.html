@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Princeton Python User Group{% endblock %}</title>
+    <meta name="description" content="{% block title-content %}Princeton Python User Group{% endblock %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/jitsi.css' %}">
+    <script src='https://8x8.vc/vpaas-magic-cookie-d64581b9fcdf40ee83320c3f52bf4378/external_api.js' async></script>
+    <script type="text/javascript">
+        window.onload = () => {
+            const api = new JitsiMeetExternalAPI("8x8.vc", {
+                roomName: "vpaas-magic-cookie-d64581b9fcdf40ee83320c3f52bf4378/SampleAppEfficientExpectationsEruptNever",
+                parentNode: document.querySelector('#jaas-container')
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div id="jaas-container"/>
+</body>
+</html>

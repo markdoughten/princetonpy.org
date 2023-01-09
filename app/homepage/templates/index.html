@@ -30,9 +30,9 @@
     <h2>Location</h2>
     <p>Currently online at:</p>
     {% if link_entry.link and link_entry.link_text %}
-        <p><a href="{{ link_entry.link }}">{{ link_entry.link_text }}</a></p>
+        <p><a href="{{ link_entry.link }}" target=”_blank”>{{ link_entry.link_text }}</a></p>
     {% elif link_entry.link %}
-        <p><a href="{{ link_entry.link }}">{{ link_entry.link }}</a></p>
+        <p><a href="{{ link_entry.link }}" target=”_blank”>{{ link_entry.link }}</a></p>
     {% else %}
         <p>Meeting link TBA!</p>
     {% endif %}

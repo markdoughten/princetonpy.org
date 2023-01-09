@@ -26,3 +26,6 @@ class Home(TemplateView):
         except Meeting.DoesNotExist:
             context["when"] = make_when(get_next_meeting_time())
         return context
+
+class JitsiPage(TemplateView):
+    template_name = "jitsi.html"
